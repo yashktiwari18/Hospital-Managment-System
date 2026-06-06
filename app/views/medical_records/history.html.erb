@@ -1,0 +1,56 @@
+<h2>Medical History</h2>
+
+<table class="table table-bordered">
+
+  <thead>
+    <tr>
+      <th>DOA</th>
+      <th>Doctor</th>
+      <th>Diagnosis</th>
+      <th>Prescription</th>
+      <th>Follow Up</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @records.each do |record| %>
+
+      <tr>
+
+        <td>
+          <%= record.created_at.strftime("%d-%m-%Y") %>
+        </td>
+
+        <td>
+          <%= record.doctor.name %>
+        </td>
+
+        <td>
+          <%= record.diagnosis %>
+        </td>
+
+        <td>
+          <%= record.prescription %>
+        </td>
+
+        <td>
+            <% if record.follow_up_date.present? %>
+                <%= record.follow_up_date.strftime("%d-%m-%Y") %>
+            <% else %>
+                N/A
+            <% end %>
+        </td>
+
+        <td>
+          <%= record.appointment.status %>
+        </td>
+
+      </tr>
+
+    <% end %>
+
+  </tbody>
+
+</table>

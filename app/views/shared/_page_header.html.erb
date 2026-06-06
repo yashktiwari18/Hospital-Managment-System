@@ -1,0 +1,25 @@
+<div class="page-header">
+
+  <div class="breadcrumb-section">
+    <p class="breadcrumb-text">
+      <%= breadcrumb %>
+    </p>
+
+    <h1 class="page-title">
+      <%= title %>
+    </h1>
+  </div>
+
+  <div class="page-actions">
+
+    <button class="back-btn" onclick="history.back()">
+      ← Back
+    </button>
+
+    <% if local_assigns[:button_text] %>
+      <%= link_to button_text, button_path, class: "action-btn" %>
+    <% end %>
+
+  </div>
+
+</div>

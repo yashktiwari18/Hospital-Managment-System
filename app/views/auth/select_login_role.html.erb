@@ -1,0 +1,61 @@
+<div class="hero"
+     style="background-image: url('<%= asset_path("home.png") %>');
+            min-height:100vh;
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            align-items:flex-start;
+            justify-content:center;
+            padding-top:120px;">
+
+  <div class="container py-5">
+
+
+  <h1 class="text-center fw-bold mb-5 text-black">
+    Login As
+  </h1>
+
+  <div class="row justify-content-center g-4">
+  
+    <div class="col-md-4">
+      <%= link_to login_path(role: "doctor"),
+      class: "text-decoration-none" do %>
+
+        <div class="card shadow-sm p-5 text-center role-card">
+          <h3 class="text-black">Doctor</h3>
+        </div>
+
+      <% end %>
+    </div>
+
+    <div class="col-md-4">
+      <%= link_to login_path(role: "patient"),
+      class: "text-decoration-none" do %>
+
+        <div class="card shadow-sm p-5 text-center role-card">
+          <h3 class="text-black">Patient</h3>
+        </div>
+
+      <% end %>
+    </div>
+
+  </div>
+</div>
+</div>  
+
+<script>
+function togglePassword(fieldId, element) {
+  const field = document.getElementById(fieldId);
+  const icon = element.querySelector("i");
+
+  if (field.type === "password") {
+    field.type = "text";
+    icon.classList.remove("bi-eye");
+    icon.classList.add("bi-eye-slash");
+  } else {
+    field.type = "password";
+    icon.classList.remove("bi-eye-slash");
+    icon.classList.add("bi-eye");
+  }
+}
+</script>app/models/user.rb

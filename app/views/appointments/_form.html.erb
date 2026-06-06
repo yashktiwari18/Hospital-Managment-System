@@ -1,0 +1,68 @@
+<%= form_with(model: appointment) do |form| %>
+  <% if appointment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+        <% appointment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if current_user.role == "patient" %>
+  <%= form.hidden_field :patient_id,
+      value: current_user.patient.id %>
+<% end %>appointments_controller.rb
+
+<div class="mb-3">
+  <%= form.label :department %>
+
+  <%= select_tag :department,
+      options_for_select(
+        Doctor.distinct.pluck(:department)
+      ),
+      prompt: "Select Department",
+      class: "form-select",
+      id: "department-select" %>
+</div>
+
+  <div class="mb-3">
+    <%= form.label :doctor_id, class: "form-label fw-semibold" %>
+    <%= form.collection_select :doctor_id,
+        Doctor.where(
+        department: params[:department]
+        ),
+        :id,
+        :name,
+        { prompt: "Select Doctor" },
+        { class: "form-select" } %>
+  </div>
+
+  <div class="mb-3">
+
+  <%= form.label :date,
+  class: "form-label fw-semibold" %>
+
+  <%= form.date_field :date,
+  class: "form-control" %>
+
+</div>
+
+  <div class="mb-3">
+
+  <%= form.label :time,
+  class: "form-label fw-semibold" %>
+
+  <%= form.time_field :time,
+  class: "form-control" %>
+
+</div>
+
+  
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

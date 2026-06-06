@@ -1,0 +1,107 @@
+<div class="container py-5">
+
+  <div class="card shadow-sm p-4 mx-auto"
+     style="max-width:700px;">
+
+    <h1 class="appointment-title">
+      Appointment Details
+    </h1>
+
+    <p>
+      <strong>Patient:</strong>
+      <%= @appointment.patient.name %>
+    </p>
+
+    <p>
+      <strong>Doctor:</strong>
+      <%= @appointment.doctor.name %>
+    </p>
+
+    <p>
+      <strong>Date:</strong>
+      <%= @appointment.date %>
+    </p>
+
+    <p>
+      <strong>Time:</strong>
+      <%= @appointment.time.strftime("%I:%M %p") if @appointment.time %>
+    </p>
+
+    <div class="appointment-status mt-4">
+
+  <p class="mb-4">
+
+  <strong>Status:</strong>
+
+  <% badge_class =
+      case @appointment.status
+      when "Pending"
+        "bg-warning text-dark"
+      when "Confirmed"
+        "bg-success"
+      when "Cancelled"
+        "bg-danger"
+      else
+        "bg-secondary"
+      end
+  %>
+
+  <span class="badge <%= badge_class %>">
+    <%= @appointment.status %>
+  </span>
+
+</p>
+
+  <% if doctor? %>
+
+  
+
+<div class="mt-4">
+
+  <h6 class="mb-3">Appointment Actions</h6>
+
+  <div class="d-flex gap-2 mb-4">
+
+    <%= button_to "Confirm",
+        appointment_path(@appointment,
+        appointment: { status: "Confirmed" }),
+        method: :patch,
+        class: "btn btn-success btn-sm" %>
+
+    <%= button_to "Cancel",
+        appointment_path(@appointment,
+        appointment: { status: "Cancelled" }),
+        method: :patch,
+        class: "btn btn-danger btn-sm" %>
+
+  </div>
+
+</div>
+
+<hr>
+
+  <% end %>
+
+</div>
+
+<div class="appointment-actions">
+
+  <%= link_to "Edit",
+      edit_appointment_path(@appointment),
+      class: "btn btn-primary" %>
+
+  <%= link_to "Back",
+      appointments_path,
+      class: "btn btn-secondary" %>
+
+  <%= button_to "Delete",
+      @appointment,
+      method: :delete,
+      data: { turbo_confirm: "Are you sure?" },
+      class: "btn btn-danger" %>
+
+</div>
+
+  </div>
+
+</div>

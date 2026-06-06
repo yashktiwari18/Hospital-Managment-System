@@ -1,0 +1,49 @@
+<h2>Bill Details</h2>
+
+<div class="card p-4">
+
+<p>
+<strong>Patient :</strong>
+<%= @bill.patient.name %>
+</p>
+
+<p>
+<strong>Doctor :</strong>
+<%= @bill.doctor.name %>
+</p>
+
+<p>
+<strong>Appointment Date :</strong>
+<%= @bill.appointment.date %>
+</p>
+
+<hr>
+
+<p>
+Consultation Fee :
+₹500
+</p>
+
+<p>
+Medicine Charges :
+₹300
+</p>
+
+<p>
+Test Charges :
+₹1200
+</p>
+
+<hr>
+
+<h4>
+Total :
+₹<%= @bill.amount %>
+</h4>
+
+<p>
+Status :
+<%= @bill.status %>
+</p>
+
+</div>

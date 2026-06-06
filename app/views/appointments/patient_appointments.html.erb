@@ -1,0 +1,54 @@
+<div class="container py-5">
+
+  <h2 class="mb-4">
+    My Appointments
+  </h2>
+
+  <table class="table table-bordered">
+
+    <thead>
+      <tr>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <% @appointments.each do |appointment| %>
+
+        <tr>
+
+          <td>
+            <%= appointment.doctor.name %>
+          </td>
+
+          <td>
+            <%= appointment.date %>
+          </td>
+
+          <td>
+            <%= appointment.time %>
+          </td>
+
+          <td>
+            <%= appointment.status %>
+          </td>
+
+          <td>
+            <%= link_to "View",
+                appointment_path(appointment),
+                class: "btn btn-sm btn-primary" %>
+          </td>
+
+        </tr>
+
+      <% end %>
+
+    </tbody>
+
+  </table>
+
+</div>

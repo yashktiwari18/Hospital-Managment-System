@@ -1,0 +1,42 @@
+<% content_for :title, "Appointments" %>
+
+<div class="container py-5 appointment-index-page">
+  <% if notice.present? %>
+    <div class="alert alert-success shadow-sm mb-4" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+    <div>
+      <%= render "shared/page_header",
+      title: "Appointments",
+      breadcrumb: "Dashboard > Appointments",
+      button_path: new_appointment_path %>
+      <p class="text-muted mb-0">View scheduled appointments and their details.</p>
+    </div>
+
+    <%= link_to "New appointment", new_appointment_path, class: "btn btn-primary btn-lg shadow-sm appointment-create-btn" %>
+  </div>
+
+  <div id="appointments" class="row g-4">
+    <% @appointments.each do |appointment| %>
+    <div class="col-12 col-lg-6 col-xxl-4">
+      <div class="card appointment-card h-100 border-0 shadow-sm">
+        <div class="card-body p-4">
+          <%= render appointment %>
+
+          <div class="d-flex flex-column align-items-center gap-3 mt-4">
+            <%= link_to "Show this appointment", appointment, class: "btn btn-outline-primary btn-sm appointment-show-btn" %>
+            <%= button_to "Delete",
+            appointment,
+            method: :delete,
+            data: { turbo_confirm: "Are you sure?" },
+            class: "btn btn-danger btn-sm appointment-show-btn" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

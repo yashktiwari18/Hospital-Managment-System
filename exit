@@ -1,0 +1,14 @@
+=> 
+[32m#<MedicalRecord:0x000077ba8755eb00[0m
+ [36mid[0m: [34m[1m2[0m,
+ [36mpatient_id[0m: [34m[1m2[0m,
+ [36mdoctor_id[0m: [34m[1m4[0m,
+ [36mdiagnosis[0m: [31m[1m"[0m[31mViral Fever Dia[0m[31m[1m"[0m,
+ [36mprescription[0m: [31m[1m"[0m[31mPCM Prescription \r\n[0m[31m[1m"[0m,
+ [36mcreated_at[0m: [31m[1m"[0m[31m2026-06-04 05:04:30.801342000 +0000[0m[31m[1m"[0m,
+ [36mupdated_at[0m: [31m[1m"[0m[31m2026-06-04 05:04:30.801342000 +0000[0m[31m[1m"[0m,
+ [36mfollow_up_date[0m: [36m[1mnil[0m,
+ [36mappointment_id[0m: [34m[1m3[0m,
+ [36mchief_complaint[0m: [36m[1mnil[0m,
+ [36msymptoms[0m: [36m[1mnil[0m,
+ [36mdoctor_notes[0m: [36m[1mnil[0m[32m>[0m

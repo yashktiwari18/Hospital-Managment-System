@@ -1,0 +1,38 @@
+<div class="form-container">
+
+  <h1>Add Patient</h1>
+
+  <% if @patient.errors.any? %>
+
+  <div class="error-box">
+
+    <% @patient.errors.full_messages.each do |message| %>
+
+      <p><%= message %></p>
+
+    <% end %>
+
+  </div>
+
+<% end %>
+
+  <%= form_with model: @patient, local: true do |form| %>
+
+    <%= form.text_field :name, placeholder: "Enter Patient Name" %>
+
+    <%= form.number_field :age, placeholder: "Enter Age" %>
+
+    <%= form.select :gender,
+    ["Male", "Female", "Transgender", "Prefer not to say"],
+    {},
+    class: "form-input" %>
+
+    <%= form.number_field :phone, placeholder: "Enter Phone Number" %>
+
+    <%= form.text_area :address, placeholder: "Enter Address" %>
+
+    <%= form.submit "Save Patient" %>
+
+  <% end %>
+
+</div>

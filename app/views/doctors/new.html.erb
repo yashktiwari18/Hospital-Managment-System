@@ -1,0 +1,62 @@
+<div class="form-container">
+
+  <h1>Add Doctor</h1>
+
+  <% if @doctor.errors.any? %>
+
+  <div class="error-box">
+
+    <% @doctor.errors.full_messages.each do |message| %>
+
+      <p><%= message %></p>
+
+    <% end %>
+
+  </div>
+
+<% end %>
+
+  <%= form_with model: @doctor, local: true do |form| %>
+
+    <%= form.text_field :name, placeholder: "Enter Doctor Name" %>
+
+    <%= form.number_field :age, placeholder: "Enter Age" %>
+
+    <%= form.select :gender,
+    ["Male", "Female", "Transgender", "Prefer not to say"],
+    {},
+    class: "form-input" %>
+
+    <%= form.number_field :phone, placeholder: "Enter Phone Number" %>
+
+    <%= form.text_area :address, placeholder: "Enter Address" %>
+
+    <%= form.text_field :education, placeholder: "Enter Education" %>
+
+    <%= form.text_field :specialization, placeholder: "Enter Specialization" %>
+
+    <div class="mb-3">
+  <%= form.label :department %>
+
+  <%= form.select :department,
+      [
+        "Cardiology",
+        "Neurology",
+        "Orthopedics",
+        "Dermatology",
+        "ENT",
+        "General Medicine",
+        "Pediatrics",
+        "Gynecology"
+      ],
+      { prompt: "Select Department" },
+      class: "form-select" %>
+</div>
+
+    <%= form.submit "Save Doctor" %>
+
+    
+
+  <% end %>
+
+</div>

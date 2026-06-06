@@ -1,0 +1,58 @@
+<h2>Medical Records</h2>
+
+<table class="table table-bordered">
+
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Diagnosis</th>
+      <th>Follow Up</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @records.each do |record| %>
+
+      <tr>
+
+        <td>
+          <%= record.patient.name %>
+        </td>
+
+        <td>
+          <%= record.diagnosis %>
+        </td>
+
+        <td>
+          <%= record.follow_up_date %>
+        </td>
+
+        <td>
+
+          <%= link_to "View",
+              medical_record_path(record),
+              class: "btn btn-success btn-sm" %>
+
+          <%= link_to "Edit",
+              edit_medical_record_path(record),
+              class: "btn btn-warning btn-sm" %>
+
+          <%= button_to "Delete",
+              medical_record_path(record),
+              method: :delete,
+              data: {
+                turbo_confirm: "Delete record?"
+              },
+              class: "btn btn-danger btn-sm" %>
+
+        </td>
+
+      </tr>
+
+    <% end %>
+
+  </tbody>
+
+</table>

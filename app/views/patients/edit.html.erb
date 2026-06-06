@@ -1,0 +1,55 @@
+<div class="form-container">
+
+  <h1>Edit Patient</h1>
+
+  <%= form_with model: @patient do |form| %>
+
+    <%= form.text_field :name %>
+
+    <%= form.number_field :age %>
+
+    <%= form.text_field :gender %>
+
+    <%= form.text_field :phone %>
+
+    <%= form.text_area :address %>
+
+    <%= form.submit "Update Patient" %>
+
+    <div class="mb-3">
+  <%= form.label :blood_group %>
+  <%= form.select :blood_group,
+      ["A+","A-","B+","B-","AB+","AB-","O+","O-"],
+      {},
+      class: "form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :dob, "Date of Birth" %>
+  <%= form.date_field :dob,
+      class: "form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :emergency_contact %>
+  <%= form.telephone_field :emergency_contact,
+      class: "form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :allergies %>
+  <%= form.text_area :allergies,
+      rows: 3,
+      class: "form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :medical_history %>
+  <%= form.text_area :medical_history,
+      rows: 4,
+      class: "form-control" %>
+</div>
+
+  <% end %>
+
+</div>

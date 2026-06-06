@@ -1,0 +1,37 @@
+=> 
+[[32m#<User:0x000076c50eeca280[0m
+  [36mid[0m: [34m[1m1[0m,
+  [36mcreated_at[0m: [31m[1m"[0m[31m2026-05-30 07:20:34.265304000 +0000[0m[31m[1m"[0m,
+  [36memail[0m: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m,
+  [36mname[0m: [31m[1m"[0m[31mYash Tiwari[0m[31m[1m"[0m,
+  [36mpassword[0m: [36m[1mnil[0m,
+  [36mpassword_digest[0m: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m,
+  [36mrole[0m: [31m[1m"[0m[31mpatient[0m[31m[1m"[0m,
+  [36mupdated_at[0m: [31m[1m"[0m[31m2026-05-30 07:20:34.265304000 +0000[0m[31m[1m"[0m[32m>[0m,
+ [32m#<User:0x000076c50eeca140[0m
+  [36mid[0m: [34m[1m2[0m,
+  [36mcreated_at[0m: [31m[1m"[0m[31m2026-05-30 07:26:54.434839000 +0000[0m[31m[1m"[0m,
+  [36memail[0m: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m,
+  [36mname[0m: [31m[1m"[0m[31mDoctor[0m[31m[1m"[0m,
+  [36mpassword[0m: [36m[1mnil[0m,
+  [36mpassword_digest[0m: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m,
+  [36mrole[0m: [31m[1m"[0m[31mdoctor[0m[31m[1m"[0m,
+  [36mupdated_at[0m: [31m[1m"[0m[31m2026-05-30 07:26:54.434839000 +0000[0m[31m[1m"[0m[32m>[0m,
+ [32m#<User:0x000076c50eec9ec0[0m
+  [36mid[0m: [34m[1m3[0m,
+  [36mcreated_at[0m: [31m[1m"[0m[31m2026-05-30 07:37:49.250920000 +0000[0m[31m[1m"[0m,
+  [36memail[0m: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m,
+  [36mname[0m: [31m[1m"[0m[31mDoctor[0m[31m[1m"[0m,
+  [36mpassword[0m: [36m[1mnil[0m,
+  [36mpassword_digest[0m: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m,
+  [36mrole[0m: [31m[1m"[0m[31mdoctor[0m[31m[1m"[0m,
+  [36mupdated_at[0m: [31m[1m"[0m[31m2026-05-30 07:37:49.250920000 +0000[0m[31m[1m"[0m[32m>[0m,
+ [32m#<User:0x000076c50eec9d80[0m
+  [36mid[0m: [34m[1m4[0m,
+  [36mcreated_at[0m: [31m[1m"[0m[31m2026-05-30 07:40:06.977021000 +0000[0m[31m[1m"[0m,
+  [36memail[0m: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m,
+  [36mname[0m: [31m[1m"[0m[31mRajat[0m[31m[1m"[0m,
+  [36mpassword[0m: [36m[1mnil[0m,
+  [36mpassword_digest[0m: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m,
+  [36mrole[0m: [31m[1m"[0m[31mdoctor[0m[31m[1m"[0m,
+  [36mupdated_at[0m: [31m[1m"[0m[31m2026-05-30 07:40:06.977021000 +0000[0m[31m[1m"[0m[32m>[0m]

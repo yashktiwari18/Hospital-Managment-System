@@ -1,0 +1,51 @@
+<h2>My Bills</h2>
+
+<table class="table table-bordered">
+
+<thead>
+<tr>
+  <th>Bill ID</th>
+  <th>Patient</th>
+  <th>Amount</th>
+  <th>Status</th>
+  <th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+
+<% @bills.each do |bill| %>
+
+<tr>
+
+<td>
+<%= bill.id %>
+</td>
+
+<td>
+<%= bill.patient.name %>
+</td>
+
+<td>
+₹ <%= bill.amount %>
+</td>
+
+<td>
+<%= bill.status %>
+</td>
+
+<td>
+
+<%= link_to "View",
+bill_path(bill),
+class:"btn btn-primary btn-sm" %>
+
+</td>
+
+</tr>
+
+<% end %>
+
+</tbody>
+
+</table>

@@ -1,0 +1,32 @@
+<%= form_with(model: test_report) do |form| %>
+  <% if test_report.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(test_report.errors.count, "error") %> prohibited this test_report from being saved:</h2>
+
+      <ul>
+        <% test_report.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :patient_id, style: "display: block" %>
+    <%= form.text_field :patient_id %>
+  </div>
+
+  <div>
+    <%= form.label :test_type, style: "display: block" %>
+    <%= form.text_field :test_type %>
+  </div>
+
+  <div>
+    <%= form.label :result, style: "display: block" %>
+    <%= form.textarea :result %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<%= form_with model: @doctor do |form| %>
+
+<div class="mb-3">
+  <%= form.label :qualification %>
+  <%= form.text_field :qualification,
+      class:"form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :department %>
+  <%= form.text_field :department,
+      class:"form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :specialization %>
+  <%= form.text_field :specialization,
+      class:"form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :experience %>
+  <%= form.number_field :experience,
+      class:"form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :consultation_fee %>
+  <%= form.number_field :consultation_fee,
+      class:"form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :about %>
+  <%= form.text_area :about,
+      rows:4,
+      class:"form-control" %>
+</div>
+
+<div class="text-center">
+  <%= form.submit "Update Profile",
+      class:"btn btn-success px-5" %>
+</div>
+
+<% end %>

@@ -1,0 +1,25 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Patients") do |sheet|
+
+  sheet.add_row [
+    "ID",
+    "Name",
+    "Age",
+    "Gender",
+    "Phone",
+    "Address"
+  ]
+
+  @patients.each do |patient|
+    sheet.add_row [
+      patient.id,
+      patient.name,
+      patient.age,
+      patient.gender,
+      patient.phone,
+      patient.address
+    ]
+  end
+
+end

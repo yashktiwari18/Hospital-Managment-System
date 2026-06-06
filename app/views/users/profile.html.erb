@@ -1,0 +1,169 @@
+<div class="container py-5">
+
+  <div class="card shadow-lg border-0 rounded-4 p-4">
+
+    <div class="d-flex align-items-center gap-4 mb-4">
+
+      <div class="profile-avatar">
+        <%= @user.name.first.upcase %>
+      </div>
+
+      <div>
+        <h2 class="fw-bold mb-1"><%= @user.name %></h2>
+
+        <p class="text-muted mb-0">
+          <%= @user.role.capitalize %>
+        </p>
+      </div>
+
+    </div>
+    <hr>
+    <div class="row g-4">
+
+      <div class="col-md-6">
+        <div class="profile-box">
+          <h6>Email</h6>
+          <p><%= @user.email %></p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="profile-box">
+          <h6>Role</h6>
+          <p><%= @user.role.capitalize %></p>
+        </div>
+      </div>
+
+      <% if @user.role == "doctor" %>
+
+        <div class="col-md-6">
+          <div class="profile-box">
+            <h6>Specialization</h6>
+            <p><%= @user.doctor&.specialization.presence || "Not Added" %></p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="profile-box">
+            <h6>Education</h6>
+            <p><%= @user.doctor&.education.presence || "Not Added" %></p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="profile-box">
+            <h6>Field</h6>
+            <p><%= @user.doctor&.field.presence || "Not Added" %></p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+  <div class="profile-box">
+    <h6>Qualification</h6>
+    <p>
+      <%= @user.doctor.qualification.presence || "Not Added" %>
+    </p>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <div class="profile-box">
+    <h6>Department</h6>
+    <p>
+      <%= @user.doctor.department.presence || "Not Added" %>
+    </p>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <div class="profile-box">
+    <h6>Experience</h6>
+    <p>
+      <%= @user.doctor.experience.present? ? "#{@user.doctor.experience} Years" : "Not Added" %>
+    </p>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <div class="profile-box">
+    <h6>Consultation Fee</h6>
+    <p>
+      <%= @user.doctor.consultation_fee.present? ? "₹ #{@user.doctor.consultation_fee}" : "Not Added" %>
+    </p>
+  </div>
+</div>
+
+<div class="col-12">
+  <div class="profile-box">
+    <h6>About</h6>
+    <p>
+      <%= @user.doctor.about.presence || "Not Added" %>
+    </p>
+  </div>
+</div>
+
+      <% end %>
+
+      <% if @user.role == "patient" %>
+
+        <div class="col-md-6">
+          <div class="profile-box">
+            <h6>Patient ID</h6>
+            <p>#PT-<%= @user.id %></p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="profile-box">
+            <h6>Total Appointments</h6>
+            <p><%= @user.appointments.count rescue 0 %></p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="profile-box">
+          <h6>Blood Group</h6>
+          <p><%= @user.patient.blood_group.presence || "Not Added" %></p>
+          </div>
+        </div>
+
+<div class="col-md-6">
+  <div class="profile-box">
+    <h6>DOB</h6>
+    <p><%= @user.patient.dob.presence || "Not Added" %></p>
+  </div>
+</div>
+
+<div class="col-md-6 mt-3">
+  <div class="profile-box">
+    <h6>Emergency Contact</h6>
+    <p><%= @user.patient.emergency_contact.presence || "Not Added" %></p>
+  </div>
+</div>
+
+<div class="col-md-6 mt-3">
+  <div class="profile-box">
+    <h6>Address</h6>
+    <p><%= @user.patient.address.presence || "Not Added" %></p>
+  </div>
+</div>
+
+<div class="col-12 mt-3">
+  <div class="profile-box">
+    <h6>Allergies</h6>
+    <p><%= @user.patient.allergies.presence || "Not Added" %></p>
+  </div>
+</div>
+
+<div class="col-12 mt-3">
+  <div class="profile-box">
+    <h6>Medical History</h6>
+    <p><%= @user.patient.medical_history.presence || "Not Added" %></p>
+  </div>
+</div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+

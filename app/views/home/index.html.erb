@@ -1,0 +1,28 @@
+<section class="hero"
+style="background-image: url('<%= asset_path("home.png") %>');">
+
+  <div class="container-fluid">
+
+    <div class="hero-content">
+
+      <div class="col-lg-8 text-center">
+
+        <h1 class="display-2 fw-bold text-dark mb-5">
+          Hospital Management System
+        </h1>
+
+      </div>
+
+    </div>
+
+    <div class="hero-buttons d-flex justify-content-center gap-3">
+          <%= link_to "Signup", "/select-signup-role",
+          class: "btn btn-success" %>
+
+          <%= link_to "Login", "/select-login-role",
+          class: "btn btn-outline-light" %>
+        </div>
+
+  </div>
+
+</section>

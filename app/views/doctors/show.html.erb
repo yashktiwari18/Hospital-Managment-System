@@ -1,0 +1,83 @@
+<div class="container py-5">
+
+  <div class="card shadow-lg border-0 rounded-4">
+
+    <div class="card-body p-5">
+
+      <div class="row">
+
+        <div class="col-md-3 text-center">
+
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+               class="rounded-circle shadow"
+               width="170">
+
+        </div>
+
+        <div class="col-md-9">
+
+          <h2 class="fw-bold">
+            <%= @doctor.name %>
+          </h2>
+
+          <p class="text-muted fs-5">
+            <%= @doctor.specialization %>
+          </p>
+
+          <hr>
+
+          <div class="row">
+
+            <div class="col-md-4">
+              <h6 class="text-secondary">Qualification</h6>
+              <p><%= @doctor.qualification %></p>
+            </div>
+
+            <div class="col-md-4">
+              <h6 class="text-secondary">Department</h6>
+              <p><%= @doctor.department %></p>
+            </div>
+
+            <div class="col-md-4">
+              <h6 class="text-secondary">Experience</h6>
+              <p><%= @doctor.experience %> Years</p>
+            </div>
+
+          </div>
+
+          <div class="row mt-4">
+
+            <div class="col-md-4">
+              <h6 class="text-secondary">Consultation Fee</h6>
+              <p class="fw-bold text-success">
+                ₹ <%= @doctor.consultation_fee %>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <hr class="my-4">
+
+      <h5>About Doctor</h5>
+
+      <p class="text-muted">
+        <%= @doctor.about %>
+      </p>
+
+      <div class="text-end">
+
+        <%= link_to "Edit Profile",
+            edit_doctor_path(@doctor),
+            class: "btn btn-primary px-4" %>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,144 @@
+<div class="form-container">
+
+  <h1 class="text-center mb-4">
+    <%= (params[:role] || "User").capitalize %> Signup
+  </h1>
+
+  <%= form_with model: @user,
+  url: signup_path,
+  local: true do |form| %>
+
+  <% if @user.errors.any? %>
+  <div class="alert alert-danger">
+
+    <h5>
+      <%= pluralize(@user.errors.count, "error") %>
+      prohibited this form from being saved:
+    </h5>
+
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+
+  </div>
+<% end %>
+
+    <%= form.text_field :name,
+    placeholder: "Enter Name",
+    autocomplete: "name" %>
+
+    <%= form.hidden_field :role,
+    value: params[:role] %>
+
+    <%= form.email_field :email,
+    placeholder: "Enter Email",
+    autocomplete: "email" %>
+
+    <div class="password-wrapper">
+      <%= form.password_field :password,
+      placeholder: "Enter Password",
+      autocomplete: "new-password",
+      id: "password_field" %>
+
+  <span class="toggle-eye"
+        onclick="togglePassword('password_field', this)">
+        <i class="bi bi-eye"></i>
+  </span>
+</div>
+
+<div class="password-wrapper">
+  <%= form.password_field :password_confirmation,
+      placeholder: "Confirm Password",
+      autocomplete: "new-password",
+      id: "confirm_password_field" %>
+
+  <span class="toggle-eye"
+        onclick="togglePassword('confirm_password_field', this)">
+        <i class="bi bi-eye"></i>
+  </span>
+</div>
+
+    <% if params[:role] == "doctor" %>
+
+      <%= form.text_field :specialization,
+      placeholder: "Enter Specialization" %>
+
+      <%= form.text_field :education,
+      placeholder: "Enter Education" %>
+
+      <%= form.text_field :field,
+      placeholder: "Field" %>
+
+      <%= form.text_field :department,
+      placeholder: "Department" %>
+
+      <%= form.text_field :qualification,
+      placeholder: "Qualification" %>
+
+      <%= form.number_field :experience,
+      placeholder: "Years of Experience" %> 
+
+      <%= form.number_field :consultation_fee,  
+      placeholder: "Consultation Fee" %>
+
+      <%= form.text_area :about,
+      placeholder: "Write something about yourself",
+      rows: 4 %>
+
+      <div class="mb-3">
+  <%= form.number_field :age,
+      placeholder: "Age",
+      class: "form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.select :gender,
+      ["Male", "Female", "Other"],
+      { prompt: "Select Gender" },
+      class: "form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= form.telephone_field :phone,
+      placeholder: "Phone Number",
+      class: "form-control" %>
+</div>
+
+      <%= form.hidden_field :role, value: params[:role] %>
+
+
+
+    <% end %>
+
+    <button type="submit">
+      Create Account
+    </button>
+
+  <% end %>
+
+  <p class="auth-link">
+    Already have an account?
+
+    <%= link_to "Login", "/select-login-role" %>
+  </p>
+
+</div>
+
+<script>
+function togglePassword(fieldId, element) {
+  const field = document.getElementById(fieldId);
+  const icon = element.querySelector("i");
+
+  if (field.type === "password") {
+    field.type = "text";
+    icon.classList.remove("bi-eye");
+    icon.classList.add("bi-eye-slash");
+  } else {
+    field.type = "password";
+    icon.classList.remove("bi-eye-slash");
+    icon.classList.add("bi-eye");
+  }
+}
+</script>
