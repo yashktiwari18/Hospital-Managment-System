@@ -4,6 +4,7 @@ class Appointment < ApplicationRecord
   has_one :bill, dependent: :destroy
   before_create :set_default_status
   has_one :medical_record, dependent: :destroy
+  has_one :prescription, dependent: :destroy
 
   private
 

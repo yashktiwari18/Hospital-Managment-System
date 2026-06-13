@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_05_055210) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_12_113324) do
   create_table "appointments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date"
@@ -98,6 +98,22 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_05_055210) do
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
+  create_table "prescriptions", force: :cascade do |t|
+    t.integer "appointment_id", null: false
+    t.datetime "created_at", null: false
+    t.integer "doctor_id", null: false
+    t.string "dosage"
+    t.string "duration"
+    t.string "frequency"
+    t.string "medicine_name"
+    t.integer "patient_id", null: false
+    t.text "remarks"
+    t.datetime "updated_at", null: false
+    t.index ["appointment_id"], name: "index_prescriptions_on_appointment_id"
+    t.index ["doctor_id"], name: "index_prescriptions_on_doctor_id"
+    t.index ["patient_id"], name: "index_prescriptions_on_patient_id"
+  end
+
   create_table "rooms", force: :cascade do |t|
     t.boolean "availability"
     t.integer "capacity"
@@ -138,5 +154,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_05_055210) do
   add_foreign_key "medical_records", "patients"
   add_foreign_key "patients", "rooms"
   add_foreign_key "patients", "users"
+  add_foreign_key "prescriptions", "appointments"
+  add_foreign_key "prescriptions", "doctors"
+  add_foreign_key "prescriptions", "patients"
   add_foreign_key "test_reports", "patients"
 end

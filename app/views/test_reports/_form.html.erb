@@ -11,10 +11,15 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :patient_id, style: "display: block" %>
-    <%= form.text_field :patient_id %>
-  </div>
+  <div class="field">
+  <%= form.label :patient_id, "Patient" %>
+  <%= form.collection_select :patient_id,
+                             Patient.all,
+                             :id,
+                             :name,
+                             { prompt: "Select Patient" },
+                             { class: "form-control" } %>
+</div>
 
   <div>
     <%= form.label :test_type, style: "display: block" %>

@@ -29,8 +29,7 @@
     placeholder: "Enter Name",
     autocomplete: "name" %>
 
-    <%= form.hidden_field :role,
-    value: params[:role] %>
+    <%= form.hidden_field :role, value: @user.role || params[:role] %>
 
     <%= form.email_field :email,
     placeholder: "Enter Email",
@@ -41,6 +40,8 @@
       placeholder: "Enter Password",
       autocomplete: "new-password",
       id: "password_field" %>
+
+      
 
   <span class="toggle-eye"
         onclick="togglePassword('password_field', this)">

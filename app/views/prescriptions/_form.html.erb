@@ -1,0 +1,56 @@
+<%= form_with model: prescription, local: true do |form| %>
+
+  <div>
+    <div>
+  <%= form.label :patient_id, "Select Patient" %><br>
+
+  <%= form.collection_select(
+        :patient_id,
+        @patients,
+        :id,
+        :name,
+        { prompt: "-- Select Patient --" },
+        { class: "form-select" }
+      ) %>
+</div>
+
+<br>
+
+  <div>
+    <%= form.label :medicine_name, "Medicine Name" %><br>
+    <%= form.text_field :medicine_name %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :dosage %><br>
+    <%= form.text_field :dosage %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :frequency %><br>
+    <%= form.text_field :frequency %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :duration %><br>
+    <%= form.text_field :duration %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :remarks %><br>
+    <%= form.text_area :remarks %>
+  </div>
+
+  <br>
+
+  <%= form.submit "Save Prescription" %>
+
+<% end %>

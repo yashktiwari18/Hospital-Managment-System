@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h1><%= @patient.name %></h1>
+
+  <hr>
+
+  <h3>Patient Details</h3>
+  <p><strong>Age:</strong> <%= @patient.age %></p>
+  <p><strong>Gender:</strong> <%= @patient.gender %></p>
+  <p><strong>Phone:</strong> <%= @patient.phone %></p>
+  <p><strong>Address:</strong> <%= @patient.address %></p>
+
+  <hr>
+
+  <h3>Medical Records</h3>
+  <% @medical_records.each do |record| %>
+    <p><%= record.diagnosis %></p>
+  <% end %>
+
+  <hr>
+
+  <h3>Prescriptions</h3>
+  <%= link_to "Create Prescription",
+      new_prescription_path(patient_id: @patient.id),
+      class: "btn btn-success mb-3" %>
+
+  <% @prescriptions.each do |prescription| %>
+    <p><%= prescription.medicine %></p>
+  <% end %>
+</div>

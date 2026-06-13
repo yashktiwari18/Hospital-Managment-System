@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :test_reports
   resources :rooms
+  resources :prescriptions
   get "patient_dashboard/index"
   resources :appointments
   get "patients/index"

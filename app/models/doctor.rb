@@ -22,4 +22,5 @@ class Doctor < ApplicationRecord
   has_many :appointments
   has_many :medical_records
   has_many :bills
+  has_many :prescriptions, dependent: :destroy
 end

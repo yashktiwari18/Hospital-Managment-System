@@ -23,13 +23,11 @@
     <%= link_to "Billing", bills_path,
       class: "menu-item" %>
 
-    <a href="#" class="menu-item">
-      Reports
-    </a>
+    <%= link_to test_reports_path, class: "menu-item" do %>
+      Test Reports
+    <% end %>
 
-    <a href="#" class="menu-item">
-      Settings
-    </a>
+    
 
   </div>
 
