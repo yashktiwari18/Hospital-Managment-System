@@ -35,7 +35,6 @@ end
 
   def show
   @patient = Patient.find(params[:id])
-
   @appointments    = @patient.appointments
   @medical_records = @patient.medical_records
   @prescriptions   = @patient.prescriptions

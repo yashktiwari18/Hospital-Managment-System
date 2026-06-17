@@ -1,3 +1,9 @@
-<h1>Create Prescription</h1>
+<div class="container py-4">
+  <h2>New Prescription</h2>
+  <p>
+    <strong>Patient:</strong>
+    <%= @patient.name %>
+  </p>
 
-<%= render "form", prescription: @prescription %>
+  <%= render "form", prescription: @prescription %>
+</div>

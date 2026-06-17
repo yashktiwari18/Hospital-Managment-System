@@ -1,18 +1,6 @@
 <%= form_with model: prescription, local: true do |form| %>
 
-  <div>
-    <div>
-  <%= form.label :patient_id, "Select Patient" %><br>
-
-  <%= form.collection_select(
-        :patient_id,
-        @patients,
-        :id,
-        :name,
-        { prompt: "-- Select Patient --" },
-        { class: "form-select" }
-      ) %>
-</div>
+<%= form.hidden_field :patient_id, value: @patient.id %>
 
 <br>
 
